@@ -22,4 +22,6 @@ jobs:
       with:
         source_directory: .
         artifacts_directory: dist
-        
+    - name: Test package install
+      run: |
+        sudo dpkg -i dist/*.deb
