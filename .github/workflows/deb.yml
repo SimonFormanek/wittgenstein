@@ -19,9 +19,9 @@ jobs:
         sudo apt-get install -y pbuilder ubuntu-dev-tools debhelper
     - name: Build Package
       run: debuild-pbuilder
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v1
+    - name: Build Debian package
+      uses: dawidd6/action-debian-package@v1
       with:
-        name: *.deb
-        path: ..
-          
+        source_directory: .
+        artifacts_directory: dist
+        
