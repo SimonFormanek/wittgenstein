@@ -1,0 +1,17 @@
+Source: wittgenstein
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 4.3.0
+Maintainer: Šimon Fomrmánek <f@simonformanek.cz>
+Uploaders: Vitex <vitex@hippy.cz>
+Priority: optional
+Section: misc
+Homepage: https://github.com/SimonFormanek/wittgenstein
+
+Package: wittgenstein
+Depends: ${misc:Depends}
+Suggests: w3m
+Architecture: all
+Section: misc
+Priority: optional
+Description: text-only nointeractive editor
+ append contents of coomand line to file 

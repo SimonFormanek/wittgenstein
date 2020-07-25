@@ -1,0 +1,20 @@
+#!/bin/bash
+#Full script Name: append commandline contents to given file
+#file
+#TODO: pokud soubor neexistuje, zalozime ho, ok, ale udelat H1; pokud soubor neexistuje vygenerovat nazev a soubor z $@
+EXT=`echo $1| sed 's/^.*\.//'`
+
+if [[ $EXT == "md" ]] || [[ $EXT == "htm" ]] || [[ $EXT == "html" ]]  ; then 
+    F=$1; shift; echo -e $F > .last
+else
+    if 
+	[[ -f .last ]]; then  F=`cat .last`; 
+    else 
+	echo 'ROBOT: exiting (sorry, no filename given)' && exit;
+    fi
+fi
+
+echo -e $@ >> $F
+cat $F
+
+
